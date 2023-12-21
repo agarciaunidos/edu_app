@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+import toml
 import streamlit as st
 from langchain.llms import OpenAI
 from langchain.embeddings import OpenAIEmbeddings
@@ -14,15 +14,14 @@ from langchain.llms.bedrock import Bedrock
 import boto3
 
 
+config = toml.load("config.toml")
 
-load_dotenv()
-
-PINECONE_API_KEY = os.getenv('PINECONE_API_KEY')
-PINECONE_ENV = os.getenv('PINECONE_ENV')
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-kendra_index = os.getenv('KENDRA_INDEX')
-bedrock_region = os.getenv('AWS_BEDROCK_REGION')
-kendra_region = os.getenv('AWS_KENDRA_REGION')
+PINECONE_API_KEY = config.get('PINECONE_API_KEY')
+PINECONE_ENV = config.get('PINECONE_ENV')
+OPENAI_API_KEY = config.get('OPENAI_API_KEY')
+kendra_index = config.get('KENDRA_INDEX')
+bedrock_region = config.get('AWS_BEDROCK_REGION')
+kendra_region = config.get('AWS_KENDRA_REGION')
 os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 max_tokens = 1024  # Adjust as needed
 temperature = 0.7  # Adjust as needed

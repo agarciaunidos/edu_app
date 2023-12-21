@@ -1,0 +1,17 @@
+# API Config
+
+OPENAI_API_KEY = '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'
+PINECONE_API_KEY = '47c21302-4d24-459f-bf51-c7a280521b03'
+PINECONE_INDEX = 'unidosus-edai-hsdemocracy'
+PINECONE_ENV = 'us-east-1-aws'
+KENDRA_INDEX = 'b6dd5261-9e45-418b-96bb-f83f95eec47d'
+AWS_BEDROCK_REGION = 'us-east-1'
+AWS_KENDRA_REGION = 'us-east-1'
+
+# AWS config
+
+[default]
+# aws keys
+aws_access_key_id = 'AKIA3PBGJEQZOABFIVUO'
+aws_secret_access_key = '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'
+region = 'us-east-1'
