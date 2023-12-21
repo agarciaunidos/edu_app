@@ -1,0 +1,6 @@
+os
+dotenv
+streamlit
+langchain
+pinecone
+boto3
